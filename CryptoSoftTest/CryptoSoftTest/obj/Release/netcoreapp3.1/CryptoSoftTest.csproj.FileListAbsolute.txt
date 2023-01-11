@@ -1,0 +1,13 @@
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\bin\Release\netcoreapp3.1\CryptoSoftTest.exe
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\bin\Release\netcoreapp3.1\CryptoSoftTest.deps.json
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\bin\Release\netcoreapp3.1\CryptoSoftTest.runtimeconfig.json
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\bin\Release\netcoreapp3.1\CryptoSoftTest.runtimeconfig.dev.json
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\bin\Release\netcoreapp3.1\CryptoSoftTest.dll
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\bin\Release\netcoreapp3.1\CryptoSoftTest.pdb
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\obj\Release\netcoreapp3.1\CryptoSoftTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\obj\Release\netcoreapp3.1\CryptoSoftTest.AssemblyInfoInputs.cache
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\obj\Release\netcoreapp3.1\CryptoSoftTest.AssemblyInfo.cs
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\obj\Release\netcoreapp3.1\CryptoSoftTest.csproj.CoreCompileInputs.cache
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\obj\Release\netcoreapp3.1\CryptoSoftTest.dll
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\obj\Release\netcoreapp3.1\CryptoSoftTest.pdb
+D:\CryptoSoft\CryptoSoftTest\CryptoSoftTest\obj\Release\netcoreapp3.1\CryptoSoftTest.genruntimeconfig.cache
