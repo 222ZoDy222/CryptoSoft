@@ -52,34 +52,33 @@ namespace CryptoSoftTest
             return calculateResult;
         }
 
-        private bool HaveCoordinates(List<Coord> coords, Coord coord)
-        {
-            for (int i = 0; i < coords.Count; i++)
-            {
-                if (coords[i].x == coord.x && coords[i].y == coord.y) return true;
-            }
-            return false;
-        }
+       
 
         public int CalculateVariant(CoordinatePlane plane, Match match, bool frontSide)
         {
             if (frontSide) plane.FireOn(match.x1.x, match.x1.y);
             else plane.FireOn(match.x2.x, match.x2.y);
-
+            if(match.x1.x == 1 && match.x1.y == -1)
+            {
+                int t = 0;
+            }
             int frameCount = 1;
 
             int frameFireCounter = 0;
+            
             //Пока все спички не сгорят
             while (!plane.IsAllBurned)
             {
                 plane.Fire();
                 frameCount++;
+                
+
 
                 // Если огонь перестал разгораться по спичкам, то видимо одна из спичек не соприкасается с другими
                 if (!plane.FrameFireMove)
                 {
                     frameFireCounter++;
-                    if (frameFireCounter > 1)
+                    if (frameFireCounter > 3)
                         return -1;
                 }
                 else frameFireCounter = 0;

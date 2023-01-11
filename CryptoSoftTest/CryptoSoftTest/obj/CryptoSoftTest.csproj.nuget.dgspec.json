@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CryptoSoft\\CryptoSoftTest\\CryptoSoftTest\\CryptoSoftTest.csproj": {}
+    "D:\\CryptoSoft\\CryptoSoft\\CryptoSoftTest\\CryptoSoftTest\\CryptoSoftTest.csproj": {}
   },
   "projects": {
-    "D:\\CryptoSoft\\CryptoSoftTest\\CryptoSoftTest\\CryptoSoftTest.csproj": {
+    "D:\\CryptoSoft\\CryptoSoft\\CryptoSoftTest\\CryptoSoftTest\\CryptoSoftTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CryptoSoft\\CryptoSoftTest\\CryptoSoftTest\\CryptoSoftTest.csproj",
+        "projectUniqueName": "D:\\CryptoSoft\\CryptoSoft\\CryptoSoftTest\\CryptoSoftTest\\CryptoSoftTest.csproj",
         "projectName": "CryptoSoftTest",
-        "projectPath": "D:\\CryptoSoft\\CryptoSoftTest\\CryptoSoftTest\\CryptoSoftTest.csproj",
+        "projectPath": "D:\\CryptoSoft\\CryptoSoft\\CryptoSoftTest\\CryptoSoftTest\\CryptoSoftTest.csproj",
         "packagesPath": "C:\\Users\\nikgo\\.nuget\\packages\\",
-        "outputPath": "D:\\CryptoSoft\\CryptoSoftTest\\CryptoSoftTest\\obj\\",
+        "outputPath": "D:\\CryptoSoft\\CryptoSoft\\CryptoSoftTest\\CryptoSoftTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

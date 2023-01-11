@@ -38,8 +38,12 @@ namespace CryptoSoftTest
             if (result == null) Console.WriteLine("Fatal Error");
             if (result[2] == -1) Console.WriteLine("Some match can't fire");
 
-            WriterReader.WriteResult(result);
-            Console.WriteLine($"Result is\n{result[0]} {result[1]} \n{result[2]}");
+            double time_result = result[2] / Convert.ToDouble(25);
+
+            var prepared = string.Format($"{{0:f{3}}}", time_result);
+
+            WriterReader.WriteResult(result, time_result);
+            Console.WriteLine($"Result is\n{result[0]} {result[1]} \n{prepared}");
             Console.ReadKey();
         }
 

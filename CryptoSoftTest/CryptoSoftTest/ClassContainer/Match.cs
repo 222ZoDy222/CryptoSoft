@@ -47,8 +47,8 @@ namespace CryptoSoftTest
             
             if (this.x1.x == this.x2.x || this.x1.y == this.x2.y) return null;
             CoordFloat result = new CoordFloat();
-            result.x = (this.x1.x + this.x1.y) / 2f;
-            result.y = (this.x2.x + this.x2.y) / 2f;
+            result.x = (this.x1.x + this.x2.x) / 2f;
+            result.y = (this.x1.y + this.x2.y) / 2f;
             return result;
         }
 
@@ -101,6 +101,10 @@ namespace CryptoSoftTest
                 return false;
             }
         }
+        /// <summary>
+        /// Поджегся центр в этом кадре?
+        /// </summary>
+        public bool FrameCenterRate = false;
 
 
         public Match(int x1, int y1, int x2, int y2, uint time) 
@@ -108,7 +112,7 @@ namespace CryptoSoftTest
             this.x1 = new Coord(x1, y1);
             this.x2 = new Coord(x2, y2);
             this.time = time;
-            fireLine = new bool[time];
+            fireLine = new bool[time * 25];
             if (centerSquare() != null) isBigMatch = true;
         }
 
@@ -116,7 +120,10 @@ namespace CryptoSoftTest
         {
             FrameX1Rate = false;
             FrameX2Rate = false;
+            FrameCenterRate = false;
             FrameHaveFire = false;
+            bool isCenterWasInFire = isCenterOnFire;
+
             for (int i = 0; i < fireLine.Length; i++)
             {
                 // Если это первая часть
@@ -124,8 +131,8 @@ namespace CryptoSoftTest
                 {
                     if (fireLine[i] == true)
                     {
-                        
 
+                        if (fireLine.Length == 1) break;
                         // Если соседи тоже в огне
                         if (fireLine[i + 1]) continue;
 
@@ -145,7 +152,7 @@ namespace CryptoSoftTest
                         else 
                         {
                             // В этом кадре подожглась передняя часть
-                            if (i == 1)
+                            if (i == 1 && !fireLine[0])
                             {
                                 FrameX1Rate = true;
                             }
@@ -154,6 +161,32 @@ namespace CryptoSoftTest
                             {
                                 FrameX2Rate = true;
                             }
+
+                            //FrameCenterRate
+                            // Если центр еще не подожжен
+                            if (!isCenterWasInFire)
+                            {
+                                // Если например спичка из 6 частей горения
+                                // То проверяем 2 части --++-- = по 2 и 3 индексу
+                                if (fireLine.Length % 2 == 0)
+                                {
+                                    // и мы сейчас находимся в центре и его нужно поджечь
+                                    if(i == (fireLine.Length / 2) - 1 || i == (fireLine.Length / 2) - 2)
+                                    {
+                                        FrameCenterRate = true;
+                                    }
+                                }
+                                else // Если 5 например --+--
+                                {
+                                    // и мы сейчас находимся в центре и его нужно поджечь
+                                    if (i == (fireLine.Length / 2) - 1)
+                                    {
+                                        FrameCenterRate = true;
+                                    }
+                                }
+                            }
+                            
+
                             fireLine[i - 1] = true;
                             fireLine[i + 1] = true;
                             FrameHaveFire = true;

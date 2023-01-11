@@ -39,16 +39,16 @@ namespace CryptoSoftTest
         }
 
 
-        public static void WriteResult(int[] result)
+        public static void WriteResult(int[] result, double time)
         {
-            if (result == null || result.Length < 3) 
+            if (result == null || result.Length < 2) 
             {
                 Console.WriteLine("Wrong result!");
             }
 
             string path = "..\\f.out";
 
-            File.WriteAllText(path,$"{result[0].ToString()} {result[1].ToString()} \n\n{result[2].ToString()}");
+            File.WriteAllText(path,$"{result[0].ToString()} {result[1].ToString()} \n\n{string.Format($"{{0:f{3}}}", time)}");
             
             
 

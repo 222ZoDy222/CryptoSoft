@@ -12,42 +12,7 @@ namespace CryptoSoftTest.ClassContainer
         /// </summary>
         public List<Match> matches = new List<Match>();
 
-        /// <summary>
-        /// Вернуть сколько соединений у этой спички
-        /// </summary>       
-        public int GetMatchLinks(Match match)
-        {
-
-            int result = 0;
-
-            foreach(var m in matches)
-            {
-                if (m == match || (match.x1 == m.x1 && match.x2 == m.x2)) continue;
-
-                // Если x1,y1 == match.x1,y1
-                if (m.x1 == match.x1 || m.x2 == match.x2)
-                {
-                    result++;
-                }
-                else // Проверка, мб они перекрещиваются
-                {
-                    CoordFloat coordFloat1 = match.centerSquare();
-                    CoordFloat coordFloat2 = m.centerSquare();
-                    if(coordFloat1 != null && coordFloat2 != null)
-                    {
-                        if (coordFloat1.x == coordFloat2.x && coordFloat1.y == coordFloat2.y)
-                        {
-                            result++;
-                        }
-                    }
-                
-                }
-            }
-
-            return result;
-
-        }
-
+        
         /// <summary>
         /// Развивался ли огонь в этом фрейме
         /// </summary>
@@ -92,9 +57,9 @@ namespace CryptoSoftTest.ClassContainer
                 }
 
                 // Если центр в огне и поджегся давно (для больших спичек)
-                if (match.isBigMatch && match.isCenterOnFire)
+                if (match.isBigMatch && match.isCenterOnFire && !match.FrameCenterRate)
                 {
-                    FireOn(match.centerSquare());
+                    FireOn(match.centerSquare(), match);
                 }
             }
 
@@ -117,10 +82,11 @@ namespace CryptoSoftTest.ClassContainer
         /// Поджечь все спички на этой координате (с плавающей точкой)
         /// </summary>
         /// <param name="coord"></param>
-        public void FireOn(CoordFloat coords)
+        public void FireOn(CoordFloat coords, Match m)
         {
             foreach (var match in matches)
             {
+                if (m == match) continue;
                 match.FireOn(coords.x, coords.y);
             }
         }
