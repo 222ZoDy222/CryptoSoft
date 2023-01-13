@@ -50,6 +50,7 @@ namespace CryptoSoftTest
 
             string path = "..\\f.out";
 
+            // Вывод в файл
             File.WriteAllText(path,$"{result[0].ToString()} {result[1].ToString()} \n\n{string.Format($"{{0:f{3}}}", time)}");
 
 
